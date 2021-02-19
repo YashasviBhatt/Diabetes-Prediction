@@ -35,7 +35,7 @@ columns = list(df.columns)
 
 # Dropping Columns with high amount of presence of missing values
 for col in columns:
-    if (df[col].isnull().sum() / df[col].count()) > 0.1:
+    if (df[col].isnull().sum() / df[col].shape[0]) > 0.1:
         df = df.drop(col, axis=1)
 
 # Creating Instances of Imputer Class for Missing Value Management
